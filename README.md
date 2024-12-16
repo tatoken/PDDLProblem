@@ -1,2 +1,2 @@
-# DieciCampi
-Resolution of a PDDL Problem DieciCampi
+# PDDLProblems
+PDDL Problems
