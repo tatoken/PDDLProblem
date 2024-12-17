@@ -28,8 +28,10 @@
        (fieldNeighbor f2 f3)
 )
 
-(:goal (fieldWatered f1)
-       (fieldWatered f2)
-       (fieldWatered f3)
+(:goal (and
+	 (fieldWatered f1)
+         (fieldWatered f2)
+         (fieldWatered f3)
+	)
 )
 )  
