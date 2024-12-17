@@ -11,7 +11,7 @@
        (farmerInField far2 f2)
        (farmerInField far3 f3)
        (plowInField p1 f1)
-       (plowInField p1 f2)
+       (plowInField p2 f2)
        (sowerInField s f1)
 
        (not(fieldPlowed f1)) 
