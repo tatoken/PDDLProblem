@@ -1,6 +1,6 @@
 (define (domain CAMPI) 
    (:requirements :strips :typing :negative-preconditions :quantified-preconditions) 
-   (:types  tractor plow sower farmer fields -object)
+   (:types  tractor plow sower farmer field -object)
    ; sower (seminatore) - plow (aratro)
    ; i trattori stanno sempre su campi
    ; per assunto i campi nello stato iniziale sono tutti non arati 
