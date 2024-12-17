@@ -32,9 +32,12 @@
         )
     )
 
-     (:action moveOffTractor
+    (:action moveOffTractor
         :parameters (?farmer - farmer ?tractor - tractor ?field - field)
-        :precondition (farmerOnTractor ?farmer ?tractor )
+        :precondition (and 
+            (farmerOnTractor ?farmer ?tractor )
+            (tractorInField ?tractor ?field )
+            )
         :effect (and
             (not(farmerOnTractor ?farmer ?tractor))  ; Il contadino ora non è sul trattore
             (farmerInField ?farmer ?field)  ; Il contadino deve essere nello stesso campo del trattore
