@@ -78,7 +78,7 @@
 
 
     (:action attachSower
-        :parameters (?x - tractor ?y - sower ?w - farmer ?z - field)
+        :parameters (?tractor - tractor ?sower - sower ?farmer - farmer ?field - field)
         :precondition 
         (and
             (exists (?genericSower - sower) (not (forall (?genericTractor - tractor) (tractorWithSower ?genericTractor ?genericSower))))  ; esiste un seminatore non attaccato ad alcun trattore
@@ -88,12 +88,12 @@
                         (not (exists (?genericSower - sower) (tractorWithSower ?tractor ?genericSower))) ; non ha un seminatore
                     )
             ); esiste un trattore che non ha attaccato nessun aratro o seminatore
-            (farmerInField ?x ?z)
-            (tractorInField ?y ?z)
-            (sowerInField ?y ?z)
+            (farmerInField ?farmer ?field)
+            (tractorInField ?tractor ?field)
+            (sowerInField ?sower ?field)
         )
                     
-        :effect (tractorWithSower ?x ?y) ; Il trattore ha attaccato un seminatore
+        :effect (tractorWithSower ?tractor ?sower) ; Il trattore ha attaccato un seminatore
     )
 
     (:action detachSower
