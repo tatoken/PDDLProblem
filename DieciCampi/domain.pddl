@@ -32,7 +32,7 @@
         )
     )
 
-    (:action moveOffTractor
+     (:action moveOffTractor
         :parameters (?farmer - farmer ?tractor - tractor ?field - field)
         :precondition (and 
             (farmerOnTractor ?farmer ?tractor )
@@ -50,12 +50,8 @@
         :precondition 
         (and
             (exists (?genericPlow - plow) (not (forall (?genericTractor - tractor) (tractorWithPlow ?genericTractor ?genericPlow))))  ; esiste un aratro non attaccato ad alcun trattore
-            (exists (?tractor - tractor)
-                    (and
-                        (not (exists (?plow - plow) (tractorWithPlow ?tractor ?plow)))  ; non ha un aratro
-                        (not (exists (?plow - sower) (tractorWithSower ?tractor ?plow))) ; non ha un seminatore
-                    )
-            ); esiste un trattore che non ha attaccato nessun aratro o seminatore
+            (not (exists (?plow - plow) (tractorWithPlow ?tractor ?plow)))  ; non ha un aratro
+            (not (exists (?plow - sower) (tractorWithSower ?tractor ?plow))) ; non ha un seminatore
             (farmerInField ?farmer ?field)
             (tractorInField ?tractor ?field)
             (plowInField ?plow ?field)
@@ -85,12 +81,8 @@
         :precondition 
         (and
             (exists (?genericSower - sower) (not (forall (?genericTractor - tractor) (tractorWithSower ?genericTractor ?genericSower))))  ; esiste un seminatore non attaccato ad alcun trattore
-            (exists (?tractor - tractor)
-                    (and
-                        (not (exists (?genericPlow - plow) (tractorWithPlow ?tractor ?genericPlow)))  ; non ha un aratro
-                        (not (exists (?genericSower - sower) (tractorWithSower ?tractor ?genericSower))) ; non ha un seminatore
-                    )
-            ); esiste un trattore che non ha attaccato nessun aratro o seminatore
+            (not (exists (?genericPlow - plow) (tractorWithPlow ?tractor ?genericPlow)))  ; non ha un aratro
+            (not (exists (?genericSower - sower) (tractorWithSower ?tractor ?genericSower))) ; non ha un seminatore
             (farmerInField ?farmer ?field)
             (tractorInField ?tractor ?field)
             (sowerInField ?sower ?field)
