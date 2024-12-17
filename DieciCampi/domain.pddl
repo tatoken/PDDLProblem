@@ -168,8 +168,8 @@
         )
                     
         :effect (and
-            (farmerInField ?toField)
-            (not(farmerInField ?fromField))
+            (farmerInField ?farmer ?toField)
+            (not(farmerInField ?farmer ?fromField))
          )
         
     )
