@@ -9,8 +9,8 @@
 
        (not(arato f1)) 
        (not(seminato f1)) 
-       (not(irrigato f1)) 
+       (not(innaffiato f1)) 
        )
 
-(:goal (irrigato f1) )
+(:goal (innaffiato f1) )
 )  
