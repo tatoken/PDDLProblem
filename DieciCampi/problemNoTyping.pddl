@@ -7,6 +7,11 @@
        (ARATRO p1)
        (SEMINATORE s1)
 
+       (at far1 f1)
+       (at t1 f1)
+       (at p1 f1)
+       (at s1 f1)
+
        (not(arato f1)) 
        (not(seminato f1)) 
        (not(innaffiato f1)) 
