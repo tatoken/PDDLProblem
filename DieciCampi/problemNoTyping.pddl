@@ -17,5 +17,5 @@
        (not(innaffiato f1)) 
        )
 
-(:goal (together far1 t1) )
+(:goal (innaffiato f1) )
 )  
