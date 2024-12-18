@@ -162,6 +162,7 @@
 
             (at ?tractor ?field)          ; Il trattore si trova nel campo
             (not (arato ?field))          ; Il campo non è ancora arato
+            (together ?farmer ?tractor)
         )
         :effect 
         (arato ?field) ; Il campo è stato arato
@@ -180,6 +181,7 @@
             (at ?tractor ?field)             ; Il trattore si trova nel campo
             (arato ?field)                   ; Il campo è già stato arato
             (not (seminato ?field))          ; Il campo non è ancora seminato
+            (together ?farmer ?tractor)
         )
         :effect 
         (seminato ?field) ; Il campo è stato seminato
