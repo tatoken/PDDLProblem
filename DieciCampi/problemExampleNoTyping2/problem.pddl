@@ -26,7 +26,9 @@
        (at s1 f1)
 
        (CONNESSO f1 f2)
+       (CONNESSO f2 f1)
        (CONNESSO f2 f3)
+       (CONNESSO f3 f2)
 )
 
 (:goal (and
