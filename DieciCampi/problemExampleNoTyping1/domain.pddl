@@ -1,5 +1,5 @@
 (define (domain CAMPI) 
-   (:requirements :strips :negative-preconditions )
+   (:requirements :strips :negative-preconditions)
    ; sower (seminatore)  (aratro)
    ; i trattori stanno sempre su campi
    ; per assunto i campi nello stato iniziale sono tutti non arati 
@@ -12,8 +12,7 @@
         (ARATRO ?plow)
         (contadino ?farmer)
 
-        (occupiedForPlow ?tractor)
-        (occupiedForSower ?tractor)
+        (occupiedForTool ?tractor)
         (occupiedForFarmer ?tractor)
         (together ?object ?tractor)
 
@@ -75,8 +74,7 @@
             (ARATRO ?plow)                ; ?plow è un aratro
             (CAMPO ?field)                ; ?field è un campo
 
-            (not(occupiedForPlow ?tractor))          ; non ci sono altri aratro attaccati
-            (not(occupiedForSower ?tractor))         ; non ci sono altri seminatori attaccati (contemplando il caso in cui ci sia un trattore sia ARA che SEMINA)
+            (not(occupiedForTool ?tractor))          ; non ci sono altri strumenti attaccati
 
             (at ?farmer ?field)           ; Il contadino si trova nel campo
             (at ?tractor ?field)          ; Il trattore si trova nel campo
@@ -84,7 +82,7 @@
         )
         :effect 
         ( and
-            (occupiedForPlow ?tractor)    ; il trattore non è più libero da un aratro
+            (occupiedForTool ?tractor)    ; il trattore non è più libero 
             (together ?plow ?tractor )      ; L'aratro è attaccato al trattore
             )
     )
@@ -106,7 +104,7 @@
         )
         :effect 
         (and
-            (not(occupiedForPlow ?tractor))    ; Il trattore non ha più un aratro attaccato
+            (not(occupiedForTool ?tractor))    ; Il trattore non ha più uno strumento attaccato
             (not (together ?plow ?tractor )) 
         )
     )
@@ -120,8 +118,7 @@
             (SEMINATORE ?sower)              ; ?sower è un seminatore
             (CAMPO ?field)                   ; ?field è un campo
 
-            (not(occupiedForPlow ?tractor))          ; non ci sono altri aratro attaccati (contemplando il caso in cui ci sia un trattore sia ARA che SEMINA)
-            (not(occupiedForSower ?tractor))         ; non ci sono altri seminatori attaccati 
+            (not(occupiedForTool ?tractor))   ; non ci sono altri strumenti attaccati 
 
             (at ?farmer ?field)              ; Il contadino si trova nel campo
             (at ?tractor ?field)             ; Il trattore si trova nel campo
@@ -129,7 +126,7 @@
         )
         :effect 
         (and
-        (occupiedForSower ?tractor)
+        (occupiedForTool ?tractor)
         (together ?sower ?tractor )
          ) ; Il trattore ha agganciato un seminatore
     )
@@ -151,7 +148,7 @@
         )
         :effect 
         (and
-            (not(occupiedForSower ?tractor))    ; Il trattore non ha più un seminatore attaccato
+            (not(occupiedForTool ?tractor))    ; Il trattore non ha più un seminatore attaccato
             (not (together ?sower ?tractor )) 
         )
     )
