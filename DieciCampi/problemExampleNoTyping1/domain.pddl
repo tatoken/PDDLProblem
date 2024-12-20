@@ -1,5 +1,5 @@
 (define (domain CAMPI) 
-   (:requirements :strips :negative-preconditions :quantified-preconditions)
+   (:requirements :strips :negative-preconditions :quantified-preconditions :disjunctive-preconditions)
    ; sower (seminatore)  (aratro)
    ; i trattori stanno sempre su campi
    ; per assunto i campi nello stato iniziale sono tutti non arati 
@@ -51,6 +51,7 @@
         (and 
             (contadino ?farmer)           ; ?farmer è un contadino
             (CAMPO ?field)                ; ?field è un campo
+            (TRA ?tractor)
             (at ?tractor ?field)          ; Il trattore si trova nel campo
 
             (together ?farmer ?tractor)
@@ -115,7 +116,7 @@
         :precondition 
         (and
             (contadino ?farmer)              ; ?farmer è un contadino
-            (TRA ?tractor)                   ; ?tractor è un trattore
+            (TRA-SEMINA ?tractor)                   ; ?tractor è un trattore
             (SEMINATORE ?sower)              ; ?sower è un seminatore
             (CAMPO ?field)                   ; ?field è un campo
 
@@ -217,7 +218,8 @@
             (CAMPO ?fromField)            ; ?fromField è un campo
             (CAMPO ?toField)              ; ?toField è un campo
             (at ?farmer ?fromField)       ; Il contadino si trova nel campo di partenza
-            (CONNESSO ?fromField ?toField) ; I campi sono connessi
+            (or(CONNESSO ?fromField ?toField)
+                (CONNESSO ?toField ?fromField)) ; I campi sono connessi
         )
         :effect 
         (and
@@ -238,7 +240,8 @@
             (occupiedForFarmer ?tractor) ; Il contadino è associato al trattore
             (together ?farmer ?tractor)
             (at ?tractor ?fromField)      ; Il trattore si trova nel campo di partenza
-            (CONNESSO ?fromField ?toField) ; I campi sono connessi
+            (or(CONNESSO ?fromField ?toField)
+                (CONNESSO ?toField ?fromField))  ; I campi sono connessi
         )
         :effect 
         (and
