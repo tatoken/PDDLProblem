@@ -7,6 +7,8 @@
        (CAMPO f3)
        (TRA t1)
        (TRA t2)
+       (TRA-ARA t1)
+       (TRA-SEMINA t2)
        (contadino far1)
        (contadino far2)
        (contadino far3)
