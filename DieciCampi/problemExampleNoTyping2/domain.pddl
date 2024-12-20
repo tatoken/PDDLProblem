@@ -1,5 +1,5 @@
 (define (domain CAMPI) 
-   (:requirements :strips :negative-preconditions :quantified-preconditions )
+   (:requirements :strips :negative-preconditions)
    ; sower (seminatore)  (aratro)
    ; i trattori stanno sempre su campi
    ; per assunto i campi nello stato iniziale sono tutti non arati 
