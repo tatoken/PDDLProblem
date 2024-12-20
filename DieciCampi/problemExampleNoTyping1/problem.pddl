@@ -9,6 +9,10 @@
        (ARATRO p1)
        (SEMINATORE s1)
 
+       (freeForPlow t1)
+       (freeForSower t1)
+       (freeForFarmer t1)
+
        (at far1 f1)
        (at t1 f1)
        (at p1 f1)
