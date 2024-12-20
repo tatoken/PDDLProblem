@@ -4,6 +4,8 @@
 (:init (CAMPO f1) 
        (contadino far1) 
        (TRA t1) 
+       (TRA-ARA t1)
+       (TRA-SEMINA t1)
        (ARATRO p1)
        (SEMINATORE s1)
 
