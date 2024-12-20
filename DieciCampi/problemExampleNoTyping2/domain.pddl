@@ -12,9 +12,9 @@
         (ARATRO ?plow)
         (contadino ?farmer)
 
-        (freeForPlow ?tractor)
-        (freeForSower ?tractor)
-        (freeForFarmer ?tractor)
+        (occupiedForPlow ?tractor)
+        (occupiedForSower ?tractor)
+        (occupiedForFarmer ?tractor)
         (together ?object ?tractor)
 
         (at ?object ?field)
@@ -32,13 +32,13 @@
             (contadino ?farmer)          ; Verifica che ?farmer sia un contadino
             (TRA ?tractor)               ; Verifica che ?tractor sia un trattore
             (CAMPO ?field)               ; Verifica che ?field sia un campo
-            (freeForFarmer ?tractor)    ; il trattore non ha un contadino sopra
+            (not(occupiedForFarmer ?tractor))    ; il trattore non ha un contadino sopra
             
             (at ?farmer ?field)          ; Il contadino si trova nel campo
             (at ?tractor ?field)         ; Il trattore si trova nello stesso campo
         )
         :effect (and
-            (not(freeForFarmer ?tractor))    ; il trattore diventa un trattore con contadino
+            (occupiedForFarmer ?tractor)    ; il trattore diventa un trattore con contadino
             (together ?farmer ?tractor)  ; il contadino si lega al trattore
             (not (at ?farmer ?field))    ; il contadino non è più sul campo
         )
@@ -57,7 +57,7 @@
         )
         :effect 
         (and
-            (freeForFarmer ?tractor) ; Il trattore ora è libero
+            (not(occupiedForFarmer ?tractor)) ; Il trattore ora è libero
             (not(together ?farmer ?tractor))    ; il contadino si slega dal trattore
             (at ?farmer ?field)                   ; Il contadino si trova nel campo
         )
@@ -74,8 +74,8 @@
             (ARATRO ?plow)                ; ?plow è un aratro
             (CAMPO ?field)                ; ?field è un campo
 
-            (freeForPlow ?tractor)          ; non ci sono altri aratro attaccati
-            (freeForSower ?tractor)         ; non ci sono altri seminatori attaccati (contemplando il caso in cui ci sia un trattore sia ARA che SEMINA)
+            (not(occupiedForPlow ?tractor))          ; non ci sono altri aratro attaccati
+            (not(occupiedForSower ?tractor))         ; non ci sono altri seminatori attaccati (contemplando il caso in cui ci sia un trattore sia ARA che SEMINA)
 
             (at ?farmer ?field)           ; Il contadino si trova nel campo
             (at ?tractor ?field)          ; Il trattore si trova nel campo
@@ -83,7 +83,7 @@
         )
         :effect 
         ( and
-            (not(freeForPlow ?tractor))    ; il trattore non è più libero da un aratro
+            (occupiedForPlow ?tractor)    ; il trattore non è più libero da un aratro
             (together ?plow ?tractor )      ; L'aratro è attaccato al trattore
             )
     )
@@ -105,7 +105,7 @@
         )
         :effect 
         (and
-            (freeForPlow ?tractor)    ; Il trattore non ha più un aratro attaccato
+            (not(occupiedForPlow ?tractor))    ; Il trattore non ha più un aratro attaccato
             (not (together ?plow ?tractor )) 
         )
     )
@@ -119,8 +119,8 @@
             (SEMINATORE ?sower)              ; ?sower è un seminatore
             (CAMPO ?field)                   ; ?field è un campo
 
-            (freeForPlow ?tractor)          ; non ci sono altri aratro attaccati
-            (freeForSower ?tractor)         ; non ci sono altri seminatori attaccati (contemplando il caso in cui ci sia un trattore sia ARA che SEMINA)
+            (not(occupiedForPlow ?tractor))          ; non ci sono altri aratro attaccati (contemplando il caso in cui ci sia un trattore sia ARA che SEMINA)
+            (not(occupiedForSower ?tractor))         ; non ci sono altri seminatori attaccati 
 
             (at ?farmer ?field)              ; Il contadino si trova nel campo
             (at ?tractor ?field)             ; Il trattore si trova nel campo
@@ -128,7 +128,7 @@
         )
         :effect 
         (and
-        (not(freeForSower ?tractor))
+        (occupiedForSower ?tractor)
         (together ?sower ?tractor )
          ) ; Il trattore ha agganciato un seminatore
     )
@@ -150,7 +150,7 @@
         )
         :effect 
         (and
-            (freeForSower ?tractor)    ; Il trattore non ha più un seminatore attaccato
+            (not(occupiedForSower ?tractor))    ; Il trattore non ha più un seminatore attaccato
             (not (together ?sower ?tractor )) 
         )
     )
@@ -161,7 +161,7 @@
         (and
             (contadino ?farmer)           ; ?farmer è un contadino
             (TRA-ARA ?tractor)            ; ?tractor è un trattore
-            (not(freeForFarmer ?tractor))
+            (occupiedForFarmer ?tractor)
 
             (ARATRO ?plow)                ; ?plow è un aratro
             (CAMPO ?field)                ; ?field è un campo
@@ -181,7 +181,7 @@
         (and
             (contadino ?farmer)              ; ?farmer è un contadino
             (TRA-SEMINA ?tractor)                   ; ?tractor è un trattore
-            (not(freeForFarmer ?tractor)); Il contadino è associato al trattore
+            (occupiedForFarmer ?tractor); Il contadino è associato al trattore
             (SEMINATORE ?sower)              ; ?sower è un seminatore
             (CAMPO ?field)                   ; ?field è un campo
     
@@ -235,7 +235,7 @@
             (CAMPO ?fromField)            ; ?fromField è un campo
             (CAMPO ?toField)              ; ?toField è un campo
 
-            (not(freeForFarmer ?tractor)) ; Il contadino è associato al trattore
+            (occupiedForFarmer ?tractor) ; Il contadino è associato al trattore
             (together ?farmer ?tractor)
             (at ?tractor ?fromField)      ; Il trattore si trova nel campo di partenza
             (CONNESSO ?fromField ?toField) ; I campi sono connessi
