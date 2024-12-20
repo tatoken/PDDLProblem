@@ -25,16 +25,6 @@
        (at p2 f2)
        (at s1 f1)
 
-       (not(arato f1)) 
-       (not(seminato f1)) 
-       (not(innaffiato f1))
-       (not(arato f2)) 
-       (not(seminato f2)) 
-       (not(innaffiato f2))
-       (not(arato f3)) 
-       (not(seminato f3)) 
-       (not(innaffiato f3))
-
        (CONNESSO f1 f2)
        (CONNESSO f2 f3)
 )
