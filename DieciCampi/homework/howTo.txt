@@ -1,0 +1,159 @@
+./ff -o domain2.pddl -f problem2.pddl -s 0
+
+ff: parsing domain file
+domain 'CAMPI' defined
+ ... done.
+ff: parsing problem file
+problem 'DIECI-CAMPI' defined
+ ... done.
+
+
+translating negated cond for predicate INNAFFIATO
+translating negated cond for predicate SEMINATO
+translating negated cond for predicate ARATO
+translating negated cond for predicate OCCUPIEDFORTOOL
+translating negated cond for predicate OCCUPIEDFORFARMER
+no metric specified.
+
+ff: search configuration is Enforced Hill-Climbing, if that fails then best-first search.
+Metric is plan length.
+NO COST MINIMIZATION (and no cost-minimizing relaxed plans).
+
+Cueing down from goal distance:   55 into depth [1]
+                                  54            [1][2]
+                                  53            [1][2][3][4]
+                                  52            [1][2][3]
+                                  51            [1][2][3][4]
+                                  50            [1][2]
+                                  49            [1][2]
+                                  48            [1][2]
+                                  47            [1]
+                                  46            [1]
+                                  44            [1]
+                                  43            [1][2]
+                                  42            [1]
+                                  41            [1]
+                                  40            [1][2]
+                                  39            [1]
+                                  38            [1][2][3]
+                                  36            [1]
+                                  35            [1]
+                                  34            [1][2]
+                                  33            [1]
+                                  32            [1][2]
+                                  31            [1][2][3]
+                                  29            [1][2]
+                                  28            [1][2]
+                                  27            [1]
+                                  26            [1][2]
+                                  25            [1]
+                                  24            [1][2][3]
+                                  23            [1][2]
+                                  22            [1]
+                                  21            [1]
+                                  20            [1][2]
+                                  17            [1]
+                                  16            [1][2]
+                                  15            [1][2][3]
+                                  14            [1]
+                                  13            [1]
+                                  12            [1]
+                                  10            [1]
+                                   9            [1]
+                                   8            [1]
+                                   7            [1]
+                                   6            [1]
+                                   5            [1]
+                                   4            [1][2]
+                                   3            [1]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+ff: found legal plan as follows
+step    0: MOVEFARMER CONTADINO2 CAM5 CAM6
+        1: MOVEONTRACTOR CONTADINO1 TRAS1 CAM1
+        2: MOVETRACTOR TRAS1 CONTADINO1 CAM1 CAM5
+        3: MOVETRACTOR TRAS1 CONTADINO1 CAM5 CAM6
+        4: ATTACHSOWER TRAS1 SEMINATORE2 CONTADINO2 CAM6
+        5: MOVEFARMER CONTADINO2 CAM6 CAM5
+        6: MOVEONTRACTOR CONTADINO2 TRAA2 CAM5
+        7: MOVETRACTOR TRAA2 CONTADINO2 CAM5 CAM6
+        8: MOVETRACTOR TRAA2 CONTADINO2 CAM6 CAM7
+        9: MOVETRACTOR TRAA2 CONTADINO2 CAM7 CAM8
+       10: MOVEOFFTRACTOR CONTADINO2 TRAA2 CAM8
+       11: ATTACHPLOW TRAA2 ARATRO2 CONTADINO2 CAM8
+       12: MOVEONTRACTOR CONTADINO2 TRAA2 CAM8
+       13: PLOWFIELD TRAA2 ARATRO2 CONTADINO2 CAM8
+       14: MOVETRACTOR TRAA2 CONTADINO2 CAM8 CAM7
+       15: PLOWFIELD TRAA2 ARATRO2 CONTADINO2 CAM7
+       16: MOVETRACTOR TRAA2 CONTADINO2 CAM7 CAM6
+       17: PLOWFIELD TRAA2 ARATRO2 CONTADINO2 CAM6
+       18: MOVETRACTOR TRAA2 CONTADINO2 CAM6 CAM7
+       19: MOVETRACTOR TRAA2 CONTADINO2 CAM7 CAM8
+       20: SOWFIELD TRAS1 SEMINATORE2 CONTADINO1 CAM6
+       21: MOVETRACTOR TRAS1 CONTADINO1 CAM6 CAM7
+       22: SOWFIELD TRAS1 SEMINATORE2 CONTADINO1 CAM7
+       23: MOVETRACTOR TRAS1 CONTADINO1 CAM7 CAM8
+       24: SOWFIELD TRAS1 SEMINATORE2 CONTADINO1 CAM8
+       25: MOVETRACTOR TRAA2 CONTADINO2 CAM8 CAM9
+       26: MOVETRACTOR TRAA2 CONTADINO2 CAM9 CAM10
+       27: PLOWFIELD TRAA2 ARATRO2 CONTADINO2 CAM10
+       28: MOVETRACTOR TRAA2 CONTADINO2 CAM10 CAM9
+       29: PLOWFIELD TRAA2 ARATRO2 CONTADINO2 CAM9
+       30: MOVETRACTOR TRAA2 CONTADINO2 CAM9 CAM8
+       31: MOVETRACTOR TRAS1 CONTADINO1 CAM8 CAM9
+       32: SOWFIELD TRAS1 SEMINATORE2 CONTADINO1 CAM9
+       33: MOVETRACTOR TRAS1 CONTADINO1 CAM9 CAM10
+       34: SOWFIELD TRAS1 SEMINATORE2 CONTADINO1 CAM10
+       35: MOVETRACTOR TRAS1 CONTADINO1 CAM10 CAM9
+       36: MOVEOFFTRACTOR CONTADINO1 TRAS1 CAM9
+       37: WATERFIELD CONTADINO1 CAM9
+       38: MOVEFARMER CONTADINO1 CAM9 CAM10
+       39: WATERFIELD CONTADINO1 CAM10
+       40: MOVEFARMER CONTADINO1 CAM10 CAM9
+       41: MOVEONTRACTOR CONTADINO1 TRAS1 CAM9
+       42: MOVETRACTOR TRAS1 CONTADINO1 CAM9 CAM8
+       43: MOVETRACTOR TRAA2 CONTADINO2 CAM8 CAM1
+       44: MOVETRACTOR TRAA2 CONTADINO2 CAM1 CAM2
+       45: PLOWFIELD TRAA2 ARATRO2 CONTADINO2 CAM2
+       46: MOVETRACTOR TRAA2 CONTADINO2 CAM2 CAM5
+       47: MOVETRACTOR TRAA2 CONTADINO2 CAM5 CAM4
+       48: PLOWFIELD TRAA2 ARATRO2 CONTADINO2 CAM4
+       49: MOVETRACTOR TRAA2 CONTADINO2 CAM4 CAM5
+       50: MOVETRACTOR TRAS1 CONTADINO1 CAM8 CAM1
+       51: PLOWFIELD TRAA2 ARATRO2 CONTADINO2 CAM5
+       52: MOVETRACTOR TRAA2 CONTADINO2 CAM5 CAM1
+       53: MOVETRACTOR TRAS1 CONTADINO1 CAM1 CAM5
+       54: PLOWFIELD TRAA2 ARATRO2 CONTADINO2 CAM1
+       55: SOWFIELD TRAS1 SEMINATORE2 CONTADINO1 CAM5
+       56: MOVETRACTOR TRAA2 CONTADINO2 CAM1 CAM2
+       57: MOVETRACTOR TRAA2 CONTADINO2 CAM2 CAM3
+       58: PLOWFIELD TRAA2 ARATRO2 CONTADINO2 CAM3
+       59: MOVETRACTOR TRAS1 CONTADINO1 CAM5 CAM1
+       60: SOWFIELD TRAS1 SEMINATORE2 CONTADINO1 CAM1
+       61: MOVETRACTOR TRAS1 CONTADINO1 CAM1 CAM2
+       62: MOVETRACTOR TRAS1 CONTADINO1 CAM2 CAM3
+       63: MOVETRACTOR TRAA2 CONTADINO2 CAM3 CAM4
+       64: MOVETRACTOR TRAA2 CONTADINO2 CAM4 CAM5
+       65: MOVEOFFTRACTOR CONTADINO2 TRAA2 CAM5
+       66: MOVEFARMER CONTADINO2 CAM5 CAM6
+       67: WATERFIELD CONTADINO2 CAM6
+       68: MOVEFARMER CONTADINO2 CAM6 CAM7
+       69: WATERFIELD CONTADINO2 CAM7
+       70: MOVEFARMER CONTADINO2 CAM7 CAM8
+       71: WATERFIELD CONTADINO2 CAM8
+       72: SOWFIELD TRAS1 SEMINATORE2 CONTADINO1 CAM3
+       73: MOVETRACTOR TRAS1 CONTADINO1 CAM3 CAM4
+       74: SOWFIELD TRAS1 SEMINATORE2 CONTADINO1 CAM4
+       75: MOVETRACTOR TRAS1 CONTADINO1 CAM4 CAM5
+       76: MOVETRACTOR TRAS1 CONTADINO1 CAM5 CAM2
+       77: SOWFIELD TRAS1 SEMINATORE2 CONTADINO1 CAM2
+
+time spent:    0.00 seconds instantiating 900 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 218 facts and 756 actions
+               0.00 seconds creating final representation with 152 relevant facts, 0 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.05 seconds searching, evaluating 698 states, to a max depth of 4
+               0.05 seconds total time
