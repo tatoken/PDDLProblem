@@ -5,8 +5,6 @@
   <img alt="last-commit" src="https://img.shields.io/github/last-commit/tatoken/PDDLProblem?style=flat&logo=git&logoColor=white&color=0080ff">
   <img alt="repo-top-language" src="https://img.shields.io/github/languages/top/tatoken/PDDLProblem?style=flat&color=0080ff">
   <img alt="repo-language-count" src="https://img.shields.io/github/languages/count/tatoken/PDDLProblem?style=flat&color=0080ff">
-  <img alt="PDDL" src="https://img.shields.io/badge/PDDL-005FAD?style=flat&logo=data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E">
-  <img alt="Text files" src="https://img.shields.io/badge/Text%20files-000000?style=flat&logo=txt&logoColor=white">
 </p>
 
 
