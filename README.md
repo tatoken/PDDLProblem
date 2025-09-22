@@ -33,7 +33,7 @@ This repository provides a collection of PDDL problem formulations for various p
 
 ## Structure
 The repository is organized as follows:
-
+```
 /pddl-problems
 ├── Blockword/
 │ ├── domain.pddl
@@ -48,7 +48,7 @@ The repository is organized as follows:
 │ ├── domain.pddl
 │ └── problem.pddl
 └── README.md
-
+```
 ---
 
 ## Getting Started
